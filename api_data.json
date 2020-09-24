@@ -68,38 +68,6 @@
   },
   {
     "type": "POST",
-    "url": "/accounts/delete_set/",
-    "title": "Delete set",
-    "description": "<p>Delete a UserCharacterTag</p>",
-    "group": "accounts",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "int",
-            "optional": false,
-            "field": "set_id",
-            "description": "<p>the id of the UserCharacterTag to be deleted</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Boolean",
-            "optional": false,
-            "field": "is_delete_characters",
-            "defaultValue": "False",
-            "description": "<p>(optional) false will not delete the UserCharacters in this set from the user library, even if they don't belong to any other UserCharacterTags of that user</p>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "jiezi/accounts/views.py",
-    "groupTitle": "accounts",
-    "name": "PostAccountsDelete_set"
-  },
-  {
-    "type": "POST",
     "url": "/accounts/get_available_sets/",
     "title": "Get available sets",
     "description": "<p>Get available existing CharacterSets to add</p>",
@@ -121,37 +89,6 @@
     "filename": "jiezi/accounts/views.py",
     "groupTitle": "accounts",
     "name": "PostAccountsGet_available_sets"
-  },
-  {
-    "type": "POST",
-    "url": "/accounts/rename_set/",
-    "title": "Rename set",
-    "description": "<p>Rename a UserCharacterTag, the new name cannot be the same as the name of a current UserCharacterTag of the same user</p>",
-    "group": "accounts",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "int",
-            "optional": false,
-            "field": "set_id",
-            "description": "<p>the id of the UserCharacterTag to change name</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "new_name",
-            "description": ""
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "jiezi/accounts/views.py",
-    "groupTitle": "accounts",
-    "name": "PostAccountsRename_set"
   },
   {
     "type": "POST",
@@ -192,80 +129,6 @@
   },
   {
     "type": "POST",
-    "url": "/learning/get_character",
-    "title": "Get Character",
-    "description": "<p>Get the detail of a Character</p>",
-    "group": "learning",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "int",
-            "optional": false,
-            "field": "character_id",
-            "description": ""
-          }
-        ]
-      }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Object",
-            "optional": false,
-            "field": "character",
-            "description": "<p>the serialized Character</p>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "jiezi/learning/views.py",
-    "groupTitle": "learning",
-    "name": "PostLearningGet_character"
-  },
-  {
-    "type": "POST",
-    "url": "/learning/get_radical",
-    "title": "Get Radical",
-    "description": "<p>Get the detail of a Radical</p>",
-    "group": "learning",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "int",
-            "optional": false,
-            "field": "radical_id",
-            "description": ""
-          }
-        ]
-      }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Object",
-            "optional": false,
-            "field": "radical",
-            "description": "<p>the serialized Radical</p>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "jiezi/learning/views.py",
-    "groupTitle": "learning",
-    "name": "PostLearningGet_radical"
-  },
-  {
-    "type": "POST",
     "url": "/learning/start_learning/",
     "title": "Start Learning",
     "description": "<p>Start Learning, this should be done with an actual form submission</p>",
@@ -275,18 +138,10 @@
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "int",
-            "optional": false,
-            "field": "minutes_to_learn",
-            "description": "<p>how many minutes to learn</p>"
-          },
-          {
-            "group": "Parameter",
             "type": "int[]",
             "optional": false,
             "field": "uc_tags_filter",
-            "defaultValue": "None",
-            "description": "<p>(optional, None means everything) the ids of UserCharacterTags to INCLUDE</p>"
+            "description": "<p>the ids of UserCharacterTags to INCLUDE</p>"
           }
         ]
       }

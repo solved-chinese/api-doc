@@ -1,43 +1,6 @@
 define({ "api": [
   {
     "type": "POST",
-    "url": "/search/",
-    "title": "Search",
-    "description": "<p>search characters using ONE given keyword, it will be search against pinyin (without accent), chinese, 3 definitions</p>",
-    "group": "general",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "key_word",
-            "description": "<p>the keyword to be searched</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Object[]",
-            "optional": false,
-            "field": "characters",
-            "description": "<p>list of serialized Character objects</p>"
-          }
-        ]
-      }
-    },
-    "version": "0.0.0",
-    "filename": "jiezi/learning/views.py",
-    "groupTitle": "general",
-    "name": "PostSearch"
-  },
-  {
-    "type": "POST",
     "url": "/learning/start_learning/",
     "title": "Start Learning",
     "description": "<p>Start Learning, this should be done with an actual form submission</p>",
